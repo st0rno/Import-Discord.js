@@ -1,4 +1,3 @@
-const fs = require('node:fs');
 const path = require('node:path');
 
 // Require the necessary discord.js classes
@@ -7,15 +6,6 @@ const { token } = require('./config.json');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-const fileName = 'template.json';
-const fileContents = fs.readFileSync(fileName, 'utf8');
-const fileJSON = JSON.parse(fileContents);
-//console.log(fileJSON);
-
-const channelName = fileJSON['channel']['name'];
-const channelType = fileJSON['channel']['type'];
-const channelTopic = fileJSON['channel']['topic'];
-const channelCategory = fileJSON['channel']['category'];
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
